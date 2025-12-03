@@ -45,7 +45,7 @@ class Settings {
 		// New settings injection.
 		add_filter( 'woocommerce_admin_shared_settings', array( $this, 'add_component_settings' ) );
 		add_filter( 'woocommerce_settings_groups', array( $this, 'add_settings_group' ) );
-		add_action( 'woocommerce_settings-wc_admin', array( $this, 'add_settings' ) );
+		add_filter( 'woocommerce_settings-wc_admin', array( $this, 'add_settings' ) );
 
 		$map = new \WeakMap();
 	}
