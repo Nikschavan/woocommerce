@@ -46,6 +46,9 @@ class Settings {
 		add_filter( 'woocommerce_admin_shared_settings', array( $this, 'add_component_settings' ) );
 		add_filter( 'woocommerce_settings_groups', array( $this, 'add_settings_group' ) );
 		add_filter( 'woocommerce_settings-wc_admin', array( $this, 'add_settings' ) );
+
+		// PHPStan test: calling undefined method.
+		$this->undefined_method_for_phpstan_test();
 	}
 
 	/**
