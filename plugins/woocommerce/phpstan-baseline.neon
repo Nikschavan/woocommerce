@@ -88918,6 +88918,12 @@ parameters:
 			path: src/Internal/Admin/Settings.php
 
 		-
+			message: '#^Call to an undefined method Automattic\\WooCommerce\\Internal\\Admin\\Settings\:\:undefined_method_for_phpstan_test\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Internal/Admin/Settings.php
+
+		-
 			message: '#^Cannot assign offset ''wcVersion'' to string\.$#'
 			identifier: offsetAssign.dimType
 			count: 1
