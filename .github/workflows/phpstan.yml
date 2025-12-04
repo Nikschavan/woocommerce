@@ -60,7 +60,7 @@ jobs:
                   pnpm --filter='@woocommerce/plugin-woocommerce' phpstan 2>&1 | tee /tmp/phpstan-output.txt
                   PHPSTAN_EXIT=${PIPESTATUS[0]}
                   if [[ $PHPSTAN_EXIT -ne 0 ]]; then
-                      if grep -q "Ignored error pattern .* was not matched in reported errors" /tmp/phpstan-output.txt; then
+                      if grep -q "was not matched in reported errors" /tmp/phpstan-output.txt; then
                           echo ""
                           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
                           echo "::error::PHPStan baseline is out of date. Some errors in the baseline no longer exist in the code."
