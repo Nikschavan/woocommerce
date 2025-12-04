@@ -56,7 +56,8 @@ jobs:
             - name: 'Run PHPStan'
               working-directory: plugins/woocommerce
               run: |
-                  set -o pipefail
+                  set +e  # Don't exit immediately on error
+                  set -o pipefail  # But do capture pipeline exit codes
                   pnpm --filter='@woocommerce/plugin-woocommerce' phpstan 2>&1 | tee /tmp/phpstan-output.txt
                   PHPSTAN_EXIT=${PIPESTATUS[0]}
                   if [[ $PHPSTAN_EXIT -ne 0 ]]; then
